@@ -1,0 +1,10 @@
+.git
+.github
+.venv
+.benchmarks
+runs
+dist
+site
+tests
+__pycache__
+

@@ -1,0 +1,20 @@
+{
+  "attempt_count": 370,
+  "benchmark_contract": "arc-prize-arc-agi-2-public-eval-text-v1",
+  "benchmark_lock_sha256": "5e826fe1b2f64091adb600bdc820aa5b3b260bf19a6309817123940d2f2fc88b",
+  "cli_version": "0.1.0.dev0",
+  "completed_count": 335,
+  "completed_logical_attempt_count": 334,
+  "dataset_sha256": "179681bc01d55810ee0e90d2717ef04b8d130496541c4853479a8d6fffa4b975",
+  "error_count": 35,
+  "expected_logical_attempt_count": 334,
+  "finished_at": "2026-09-05T08:07:51.142792Z",
+  "model": "gpt-5.6-sol",
+  "profile": "full-v1",
+  "reasoning_effort": "medium",
+  "run_id": "2026-09-04.3",
+  "schema_version": 1,
+  "started_at": "2026-09-04T17:07:33.656544Z",
+  "status": "completed",
+  "track": "leaderboard"
+}

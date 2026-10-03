@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&display=swap");
+
+:root {
+  color-scheme: dark;
+  font-family: "IBM Plex Mono", monospace;
+  background: #11120f;
+  color: #efeedf;
+  font-synthesis: none;
+  --signal: #c8ff3d;
+  --paper: #efeedf;
+  --ink: #11120f;
+  --muted: #9b9d91;
+  --line: #363831;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+a { color: inherit; text-underline-offset: .25em; }
+a:hover { color: var(--signal); }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
+
+.shell { width: min(1280px, calc(100% - 40px)); margin-inline: auto; }
+.eyebrow { margin: 0; color: var(--signal); font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; }
+.display { margin: 0; font-family: "Literata", Georgia, serif; font-weight: 400; letter-spacing: -.045em; }
+.hairline { border-top: 1px solid var(--line); }
+
+@media (max-width: 640px) {
+  .shell { width: min(100% - 24px, 1280px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

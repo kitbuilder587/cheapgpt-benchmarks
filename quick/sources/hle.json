@@ -1,0 +1,16 @@
+{
+  "dataset": "cais/hle",
+  "revision": "5a81a4c7271a2a2a312b9a690f0c2fde837e4c29",
+  "parameters": {
+    "instructions": "Your response should be in the following format:\nExplanation: {your explanation for your answer choice}\nAnswer: {your chosen answer}\nConfidence: {your confidence score between 0% and 100% for your answer}",
+    "max_output_tokens": 8192,
+    "store": false
+  },
+  "items": [
+    "668825f80a642802bdfeadfa",
+    "66e8ea4cacb34dd5dbffa298",
+    "66e4cdec11c64a7e4051b2d9",
+    "66e88728ba7d8bc0d5806f3a",
+    "66f2dee46721a56e35d20300"
+  ]
+}

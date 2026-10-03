@@ -1,0 +1,22 @@
+schema_version: 1
+benchmarks:
+  arc-agi-2:
+    repository: https://github.com/arcprize/ARC-AGI-2.git
+    commit: f3283f727488ad98fe575ea6a5ac981e4a188e49
+    variant: public-evaluation-text
+  livebench:
+    repository: https://github.com/LiveBench/LiveBench.git
+    commit: 5d3c086eb2c0a85fa99a13612375676ce94556db
+  hle:
+    repository: https://github.com/centerforaisafety/hle.git
+    commit: 73ae974b1844c3ffa64c3f4343d9f1f259575700
+    variant: text-only
+  gpqa-diamond:
+    repository: https://github.com/idavidrein/gpqa.git
+    commit: 56686c06f5e19865c153de0fdb11be3890014df7
+  mmlu-pro:
+    repository: https://github.com/TIGER-AI-Lab/MMLU-Pro.git
+    commit: f418b116db00b065c2aea046518d8fcf74d39872
+  livecodebench:
+    repository: https://github.com/LiveCodeBench/LiveCodeBench.git
+    commit: 28fef95ea8c9f7a547c8329f2cd3d32b92c1fa24

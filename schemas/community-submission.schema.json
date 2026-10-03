@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kitbuilder587.github.io/cheapgpt-benchmarks/schemas/community-submission.schema.json",
+  "title": "CheapGPT community benchmark submission",
+  "type": "object",
+  "required": ["schema_version", "kind", "official", "submission_id", "author", "created_at", "run", "files"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "kind": { "const": "community" },
+    "official": { "const": false },
+    "submission_id": { "type": "string", "minLength": 1 },
+    "author": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "run": {
+      "type": "object",
+      "required": ["run_id", "model", "profile", "track", "reasoning_effort"],
+      "properties": {
+        "run_id": { "type": "string" },
+        "model": { "type": "string" },
+        "profile": { "type": "string" },
+        "track": { "enum": ["default", "leaderboard"] },
+        "reasoning_effort": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "files": {
+      "type": "object",
+      "minProperties": 2,
+      "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    }
+  },
+  "additionalProperties": false
+}

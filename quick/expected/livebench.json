@@ -1,0 +1,157 @@
+{
+  "release": "2024-11-25",
+  "questions": [
+    {
+      "question_id": "01c73e7f5bd7b486915f97829994aca9b95d6116c510d9f3781b5399dea066bd",
+      "category": "coding",
+      "turns": [
+        "### Instructions: You are an expert Python programmer. You will be given a question (problem specification) and will generate a correct Python program that matches the specification and passes all tests. You will NOT return anything except for the program.\n### Question:\nYou are given a 0-indexed integer array nums. A pair of integers x and y is called a strong pair if it satisfies the condition:\n\n|x - y| <= min(x, y)\n\nYou need to select two integers from nums such that they form a strong pair and their bitwise XOR is the maximum among all strong pairs in the array.\nReturn the maximum XOR value out of all possible strong pairs in the array nums.\nNote that you can pick the same integer twice to form a pair.\n \nExample 1:\n\nInput: nums = [1,2,3,4,5]\nOutput: 7\nExplanation: There are 11 strong pairs in the array nums: (1, 1), (1, 2), (2, 2), (2, 3), (2, 4), (3, 3), (3, 4), (3, 5), (4, 4), (4, 5) and (5, 5).\nThe maximum XOR possible from these pairs is 3 XOR 4 = 7.\n\nExample 2:\n\nInput: nums = [10,100]\nOutput: 0\nExplanation: There are 2 strong pairs in the array nums: (10, 10) and (100, 100).\nThe maximum XOR possible from these pairs is 10 XOR 10 = 0 since the pair (100, 100) also gives 100 XOR 100 = 0.\n\nExample 3:\n\nInput: nums = [5,6,25,30]\nOutput: 7\nExplanation: There are 6 strong pairs in the array nums: (5, 5), (5, 6), (6, 6), (25, 25), (25, 30) and (30, 30).\nThe maximum XOR possible from these pairs is 25 XOR 30 = 7 since the only other non-zero XOR value is 5 XOR 6 = 3.\n\n \nConstraints:\n\n1 <= nums.length <= 50\n1 <= nums[i] <= 100\n\n### Format: You will use the following starter code to write the solution to the problem and enclose your code within delimiters.\n```python\nclass Solution:\n    def maximumStrongPairXor(self, nums: List[int]) -> int:\n        \n```\n\n### Answer: (use the provided format with backticks)\n\n"
+      ],
+      "question_title": "leetcode_maximum-strong-pair-xor-i",
+      "public_test_cases": "[{\"input\": \"[1, 2, 3, 4, 5]\", \"output\": \"7\", \"testtype\": \"functional\"}, {\"input\": \"[10, 100]\", \"output\": \"0\", \"testtype\": \"functional\"}, {\"input\": \"[5, 6, 25, 30]\", \"output\": \"7\", \"testtype\": \"functional\"}]",
+      "private_test_cases": "eJzlVE1LAzEQ9SDevPkDwp6DJJlsPvwlQulBpEJB2kK3BxHBH6H/1/cyQaS37h4tpDszmZd5723Yz+vvu5ur9nu8RbB6H7a7w2kaHsywiuvBmmF/mnrBMZ02x2l6O2xYeDntnqftfvf0OnxY8xea50PFzcdGPx9bFsj1C/TGcT42WHOuWC5xy5oxW1PEGsbF4YlYUMuieUE6WpOSNQFxqGhB7LHl0VIRF7BgC7YSyhWpdBTSBJRHHBGHqAd7tAoGitPhAXEArKLPJ8UW4orWSY49EcQEeSImnAn3IV8gHSfnqPKpI5CJ18UpzCmIJJCObK3drdydwh5KgXqwg5VBOzRziAZEovJt3FWOpHZo5GF4jjyIqoO6lLPu8fnrN+Iq6hY5kVBdpJ7KOZU+853EPoUT6D8XOfN9xKikmyihZqcUGtA1Yakzpk3eqzJalIu2EMYaZ2SvnvGY5NWwQOV8//0yjljZ6Wzen4q+NOpeuzO8E7LEgabmH/5d8qlZf93/ADCkcPQ=",
+      "original_json": {
+        "question_title": "maximum-strong-pair-xor-i",
+        "question_content": "You are given a 0-indexed integer array nums. A pair of integers x and y is called a strong pair if it satisfies the condition:\n\n|x - y| <= min(x, y)\n\nYou need to select two integers from nums such that they form a strong pair and their bitwise XOR is the maximum among all strong pairs in the array.\nReturn the maximum XOR value out of all possible strong pairs in the array nums.\nNote that you can pick the same integer twice to form a pair.\n \nExample 1:\n\nInput: nums = [1,2,3,4,5]\nOutput: 7\nExplanation: There are 11 strong pairs in the array nums: (1, 1), (1, 2), (2, 2), (2, 3), (2, 4), (3, 3), (3, 4), (3, 5), (4, 4), (4, 5) and (5, 5).\nThe maximum XOR possible from these pairs is 3 XOR 4 = 7.\n\nExample 2:\n\nInput: nums = [10,100]\nOutput: 0\nExplanation: There are 2 strong pairs in the array nums: (10, 10) and (100, 100).\nThe maximum XOR possible from these pairs is 10 XOR 10 = 0 since the pair (100, 100) also gives 100 XOR 100 = 0.\n\nExample 3:\n\nInput: nums = [5,6,25,30]\nOutput: 7\nExplanation: There are 6 strong pairs in the array nums: (5, 5), (5, 6), (6, 6), (25, 25), (25, 30) and (30, 30).\nThe maximum XOR possible from these pairs is 25 XOR 30 = 7 since the only other non-zero XOR value is 5 XOR 6 = 3.\n\n \nConstraints:\n\n1 <= nums.length <= 50\n1 <= nums[i] <= 100",
+        "platform": "leetcode",
+        "question_id": "3193",
+        "contest_id": "weekly-contest-371",
+        "contest_date": "2023-11-12T00:00:00",
+        "starter_code": "class Solution:\n    def maximumStrongPairXor(self, nums: List[int]) -> int:\n        ",
+        "difficulty": "easy",
+        "metadata": "{\"func_name\": \"maximumStrongPairXor\"}"
+      },
+      "release_date": "2023-11-12T00:00:00",
+      "citation": "https://leetcode.com/problems/maximum-strong-pair-xor-i via livecodebench (https://livecodebench.github.io/)",
+      "task": "LCB_generation",
+      "livebench_release_date": "2024-06-24T00:00:00",
+      "livebench_removal_date": "2025-04-02T00:00:00",
+      "remainder": "",
+      "solution": "",
+      "partial_solution": ""
+    },
+    {
+      "question_id": "00d7be878c842d12814cb113caf8503525f8cf845b7d3ca4b8387c843f06ebc9",
+      "category": "data_analysis",
+      "turns": [
+        "Please convert the Input Table from CSV format to HTML format. Please respond only with the table. \n Input Table: Unnamed: 0,fecha,hora,sistema,bandera,precio,tipo_moneda,origen_dato\n915475,2017-11-27,15,RS,0,75.55,1,5\n44001,2013-02-22,4,EE,0,39.05,1,2\n1778281,2021-11-04,18,CSUD,0,250.0,1,8\n10955,2011-10-20,12,HU,1,72.322,1,6\n1760435,2021-10-13,22,EE,1,170.54,1,2\n797217,2017-04-17,17,LT,1,28.05,1,2\n1258422,2019-08-28,24,SE3,1,35.64,1,2\n108523,2013-07-21,13,NO5,1,35.11,1,2\n252656,2014-05-26,21,SE1,1,42.29,1,2\n637038,2016-06-18,8,NO2,1,23.36,1,2\n606399,2016-04-21,7,SE2,1,21.89,1,2\n1132360,2019-01-12,10,ES,0,68.0,1,1\n570188,2016-02-13,6,NO4,0,18.13,1,2\n \n Output: \n"
+      ],
+      "ground_truth": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>Unnamed: 0</th>\n      <th>fecha</th>\n      <th>hora</th>\n      <th>sistema</th>\n      <th>bandera</th>\n      <th>precio</th>\n      <th>tipo_moneda</th>\n      <th>origen_dato</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>915475</td>\n      <td>2017-11-27</td>\n      <td>15</td>\n      <td>RS</td>\n      <td>0</td>\n      <td>75.550</td>\n      <td>1</td>\n      <td>5</td>\n    </tr>\n    <tr>\n      <td>44001</td>\n      <td>2013-02-22</td>\n      <td>4</td>\n      <td>EE</td>\n      <td>0</td>\n      <td>39.050</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>1778281</td>\n      <td>2021-11-04</td>\n      <td>18</td>\n      <td>CSUD</td>\n      <td>0</td>\n      <td>250.000</td>\n      <td>1</td>\n      <td>8</td>\n    </tr>\n    <tr>\n      <td>10955</td>\n      <td>2011-10-20</td>\n      <td>12</td>\n      <td>HU</td>\n      <td>1</td>\n      <td>72.322</td>\n      <td>1</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>1760435</td>\n      <td>2021-10-13</td>\n      <td>22</td>\n      <td>EE</td>\n      <td>1</td>\n      <td>170.540</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>797217</td>\n      <td>2017-04-17</td>\n      <td>17</td>\n      <td>LT</td>\n      <td>1</td>\n      <td>28.050</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>1258422</td>\n      <td>2019-08-28</td>\n      <td>24</td>\n      <td>SE3</td>\n      <td>1</td>\n      <td>35.640</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>108523</td>\n      <td>2013-07-21</td>\n      <td>13</td>\n      <td>NO5</td>\n      <td>1</td>\n      <td>35.110</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>252656</td>\n      <td>2014-05-26</td>\n      <td>21</td>\n      <td>SE1</td>\n      <td>1</td>\n      <td>42.290</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>637038</td>\n      <td>2016-06-18</td>\n      <td>8</td>\n      <td>NO2</td>\n      <td>1</td>\n      <td>23.360</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>606399</td>\n      <td>2016-04-21</td>\n      <td>7</td>\n      <td>SE2</td>\n      <td>1</td>\n      <td>21.890</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <td>1132360</td>\n      <td>2019-01-12</td>\n      <td>10</td>\n      <td>ES</td>\n      <td>0</td>\n      <td>68.000</td>\n      <td>1</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <td>570188</td>\n      <td>2016-02-13</td>\n      <td>6</td>\n      <td>NO4</td>\n      <td>0</td>\n      <td>18.130</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n  </tbody>\n</table>",
+      "task": "tablereformat",
+      "livebench_release_date": "2024-06-24T00:00:00",
+      "livebench_removal_date": ""
+    },
+    {
+      "question_id": "006d27d0a338a42a35e7d50e01bfd5b8e502897097c15ab7a4b01a6e38c6bf4b",
+      "task": "story_generation",
+      "turns": [
+        "The following are the beginning sentences of a news article from the Guardian.\n-------\n Kosovo authorities on Friday closed five parallel institutions working with the ethnic Serb minority, a move that was immediately criticised by the US and could further raise tensions with neighbouring Serbia. Elbert Krasniqi, Kosovo’s minister of local administration, confirmed the closure of five so-called parallel institutions in the north – where most of the ethnic Serb minority lives – writing online that they “violate the Republic of Kosovo’s constitution and laws”. The US embassy in Kosovo reiterated on Friday in a statement Washington’s “concern and disappointment with continuing uncoordinated actions … that continue to have a direct and negative effect on members of the ethnic Serb community and other minority communities in Kosovo.” Serbia continues to assist the Serb minority since Kosovo’s 2008 proclamation of independence, which Belgrade does not recognise. Kosovo was a Serbian province before a Nato bombing campaign in 1999 ended a war between Serbian government forces and ethnic Albanian separatists in Kosovo. Their war left about 13,000 people dead, mainly ethnic Albanians. The Kosovo-Serbia relationship remains tense and the 13-year-long normalisation talks facilitated by the EU have failed to make progress. A shootout in September 2023 between masked Serb gunmen and Kosovo police left four people dead. The EU and the US have pressed both sides to implement agreements that were reached in February and March 2023 between the Serbian president, Aleksandar Vucic, and the Kosovo prime minister, Albin Kurti, who leads the ethnic Albanian dominated government. This month, Pristina said it would open the bridge on the Ibar River which divides Mitrovica into a Serb-dominated north and ethnic Albanian south. The bridge has been closed to passenger vehicle traffic for more than a decade, with minority ethnic Serbs erecting barricades since 2011 because they say “ethnic cleansing” would be carried out against them if ethnic Albanians could freely travel over the bridge into their part of the city.\n-------\nPlease generate a story based on the sentences provided.  Finish your response with this exact phrase Any other questions?. No other words should follow this phrase. Answer with at least 444 words. There should be 4 paragraphs. Paragraphs and only paragraphs are separated with each other by two new lines as if it was '\\n\\n' in python. Paragraph 4 must start with word blind."
+      ],
+      "category": "instruction_following",
+      "instruction_id_list": [
+        "startend:end_checker",
+        "length_constraints:number_words",
+        "length_constraints:nth_paragraph_first_word"
+      ],
+      "kwargs": [
+        {
+          "num_bullets": null,
+          "num_paragraphs": null,
+          "num_words": null,
+          "relation": null,
+          "forbidden_words": null,
+          "section_spliter": null,
+          "num_sections": null,
+          "keywords": null,
+          "end_phrase": "Any other questions?",
+          "postscript_marker": null,
+          "num_sentences": null,
+          "nth_paragraph": null,
+          "first_word": null,
+          "prompt_to_repeat": null
+        },
+        {
+          "num_bullets": null,
+          "num_paragraphs": null,
+          "num_words": 444,
+          "relation": "at least",
+          "forbidden_words": null,
+          "section_spliter": null,
+          "num_sections": null,
+          "keywords": null,
+          "end_phrase": null,
+          "postscript_marker": null,
+          "num_sentences": null,
+          "nth_paragraph": null,
+          "first_word": null,
+          "prompt_to_repeat": null
+        },
+        {
+          "num_bullets": null,
+          "num_paragraphs": 4,
+          "num_words": null,
+          "relation": null,
+          "forbidden_words": null,
+          "section_spliter": null,
+          "num_sections": null,
+          "keywords": null,
+          "end_phrase": null,
+          "postscript_marker": null,
+          "num_sentences": null,
+          "nth_paragraph": 4,
+          "first_word": "blind",
+          "prompt_to_repeat": null
+        }
+      ],
+      "task_prompt": "Please generate a story based on the sentences provided.",
+      "livebench_release_date": "2024-11-25T00:00:00",
+      "livebench_removal_date": "",
+      "release_date": "2024-08-31T02:14:49Z",
+      "citation": "https://www.theguardian.com/world/article/2024/aug/31/protest-from-us-after-kosovo-closes-serbian-offices"
+    },
+    {
+      "question_id": "01540b9b0b068942c8adeec17f825f0a9a3b9f52a1f61704bfebbb4c406064a7",
+      "category": "math",
+      "task": "math_comp",
+      "subtask": "smc",
+      "year": "",
+      "turns": [
+        "In Bethany's class of 30 students, twice as many people played basketball as played football. Twice as many played football as played neither. Which of the following options could have been the number of people who played both? $\\textbf{(A) }19\\qquad\\textbf{(B) }14\\qquad\\textbf{(C) }9\\qquad\\textbf{(D) }5\\qquad\\textbf{(E) }0$ If you cannot determine the correct multiple-choice answer, take your best guess. Once you have your answer, please duplicate that letter five times in a single string. For example, if the answer is F, then write FFFFF."
+      ],
+      "ground_truth": "D",
+      "hardness": null,
+      "expressions": "",
+      "livebench_release_date": "2024-06-24T00:00:00",
+      "livebench_removal_date": "",
+      "release_date": null
+    },
+    {
+      "question_id": "0405cc3d80d24b05c54ae0284daac12f64b8ec440dfc3ab8e35b0970f414e91e",
+      "category": "reasoning",
+      "ground_truth": "1, 2, romance, japanese",
+      "turns": [
+        "There are 3 people standing in a line. From left to right, they are numbered 1 to 3.\nEach person has a set of attributes: Beverage, Hobby, Job, Movie-Genre, Nationality.\nThe attributes have the following possible values:\nBeverage: water, cola, milk\nHobby: sudoku, dancing, card-games\nJob: dancer, mechanic, entrepreneur\nMovie-Genre: romance, mystery, martial-arts\nNationality: turkish, chinese, japanese\nEach person has a unique value for each attribute.\nYou know the following about the people:\nThe person who is a dancer is the same as the person who likes card-games or the person who is a dancer is the same as the person who drinks water or both\nThe person who is a entrepreneur is the same as the person who is turkish or the person who is a entrepreneur is the same as the person who likes card-games or both\nThe person who is turkish is somewhere to the left of the person who watches mystery\nThe person who drinks milk is immediately between the person who is japanese and the person who is a dancer\nThe person who likes sudoku is on the far left or far right\nThe person who is a entrepreneur is somewhere to the right of the person who is chinese\nThe person who watches martial-arts and the person who is a entrepreneur have different parity positions\nThe person who is turkish is not the same as the person who likes sudoku\nThe person who watches martial-arts and the person who drinks cola have different parity positions\nIn the above, 'parity position' means the evenness or oddness of the person's position in the line.\nGiven this information, answer the following questions:\nAt what position is the person who likes sudoku?\nAt what position is the person who drinks milk?\nWhat movie genre does the person in position 1 watch?\nWhat nationality does the person who watches mystery have?\nThink step by step and explain your reasoning, then output your answers in order in the format:\n<solution>answer1, answer2, answer3, ...</solution>\nFor instance, if there were 3 questions and the answers were A, B, and C, the output would be:\n<solution>A, B, C</solution>\nIf the answer to a question is a number, be sure to put it in numerical form (e.g. '3' instead of 'three').\n"
+      ],
+      "task": "zebra_puzzle",
+      "livebench_release_date": "2024-11-25T00:00:00",
+      "livebench_removal_date": "",
+      "level": 15
+    },
+    {
+      "question_id": "032e5f4f783412d63296cc024f9b72799491127b20cbccafe1f8430091cd16ea",
+      "category": "language",
+      "ground_truth": "Recent studies have put into question the belief that emergent abilities in language models are exclusive to large models. This skepticism arises from two observations: 1) smaller models can also exhibit high performance on emergent abilities and 2) there is doubt on the discontinuous metrics used to measure these abilities. In this paper, we propose to study emergent abilities in the lens of pre-training loss, instead of model size or training compute. We demonstrate that the models with the same pre-training loss, but different model and data sizes, generate the same performance on various downstream tasks. We also discover that a model exhibits emergent abilities on certain tasks -- regardless of the continuity of metrics -- when its pre-training loss falls below a specific threshold. Before reaching this threshold, its performance remains at the level of random guessing. This inspires us to redefine emergent abilities as those that manifest in models with lower pre-training losses, highlighting that these abilities cannot be predicted by merely extrapolating the performance trends of models with higher pre-training losses.",
+      "turns": [
+        "Please output this exact text, with no changes at all except for fixing the misspellings. Please leave all other stylistic decisions like commas and US vs British spellings as in the original text.\n\nRecent studies hvea put inot questionhten belief tyhat emergent abilties in laguage models are exclusive to large models. This skepticism arises fomr twpo observations: 1) smaller models can also exhibit high performence on emergent abilties andd 2) htere is doub on the discontinuous metrics unsed to measure theese abilityes. In this paper, we propose to studdy emergent abilityes inhten lens of pre-training loss, instead of modle size or training compute. We demonstrate tyhathten models wihtther smae pre-training loss, but differnt modle andd data sizes, generate the same perfomance on various downstream tasks. We alos dicover thgat a model exhibits emergent abilties on certian tasks -- irregardless ofther continuity of metrics -- wehn its pre-training loss falls below a specfic threshold. Before reaching htis threshold, its perfomance remains at the leval of random guessing. This inspires us to redefine emergent abilityes as those that manifest in models wih lower pre-training losses, highlighting tyhat theese abilities cannot be predicted by merely extrapolatingther performance trends of models with heigher pre-training losses."
+      ],
+      "group": "",
+      "movie_name": "",
+      "release_date": "",
+      "task": "typos",
+      "livebench_release_date": "2024-06-24T00:00:00",
+      "livebench_removal_date": "2025-04-02",
+      "citation": "",
+      "raw_id": null
+    }
+  ]
+}

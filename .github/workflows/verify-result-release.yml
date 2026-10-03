@@ -1,0 +1,38 @@
+name: Verify official result release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Draft result release tag in YYYY-MM-DD.N format
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: ${{ inputs.tag }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update && sudo apt-get install --yes minisign
+      - run: uv sync --all-extras --dev --locked
+      - name: Download draft release artifacts
+        run: |
+          test -f keys/official.minisign.pub
+          mkdir -p "$RUNNER_TEMP/$RELEASE_TAG"
+          gh release download "$RELEASE_TAG" --dir "$RUNNER_TEMP/$RELEASE_TAG"
+      - name: Verify signature, hashes and scores
+        run: >-
+          uv run cheapgpt-benchmarks verify-release "$RUNNER_TEMP/$RELEASE_TAG"
+          --public-key keys/official.minisign.pub

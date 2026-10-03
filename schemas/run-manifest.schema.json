@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kitbuilder587.github.io/cheapgpt-benchmarks/schemas/run-manifest.schema.json",
+  "title": "CheapGPT benchmark run manifest",
+  "type": "object",
+  "required": [
+    "schema_version", "run_id", "cli_version", "profile", "track", "model",
+    "started_at", "status", "benchmark_lock_sha256", "attempt_count",
+    "completed_count", "error_count"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "run_id": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}\\.[1-9][0-9]*$" },
+    "cli_version": { "type": "string" },
+    "profile": { "type": "string" },
+    "track": { "enum": ["default", "leaderboard"] },
+    "model": { "type": "string" },
+    "reasoning_effort": { "type": ["string", "null"] },
+    "benchmark_contract": { "type": ["string", "null"] },
+    "dataset_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": ["string", "null"], "format": "date-time" },
+    "status": { "enum": ["running", "completed", "incomplete"] },
+    "benchmark_lock_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "attempt_count": { "type": "integer", "minimum": 0 },
+    "completed_count": { "type": "integer", "minimum": 0 },
+    "error_count": { "type": "integer", "minimum": 0 },
+    "expected_logical_attempt_count": { "type": "integer", "minimum": 0 },
+    "completed_logical_attempt_count": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": false
+}

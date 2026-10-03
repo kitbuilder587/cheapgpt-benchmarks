@@ -1,0 +1,13 @@
+services:
+  runner:
+    build: .
+    environment:
+      CHEAPGPT_API_KEY: ${CHEAPGPT_API_KEY:?set CHEAPGPT_API_KEY}
+      CHEAPGPT_BASE_URL: ${CHEAPGPT_BASE_URL:-https://api.aiproductiv.ru/v1}
+    volumes:
+      - ./runs:/workspace/runs
+      - ./.benchmarks:/workspace/.benchmarks
+    read_only: true
+    tmpfs:
+      - /tmp
+

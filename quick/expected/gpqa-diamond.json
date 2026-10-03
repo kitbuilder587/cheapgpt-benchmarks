@@ -1,0 +1,42 @@
+{
+  "gpqa-diamond-rec06pnAkLOr2t2mp": {
+    "answer": "D",
+    "record_id": "rec06pnAkLOr2t2mp",
+    "subdomain": "Physics (general)",
+    "dataset_revision": "633f5ee89ab8ad4522a9f850766b73f62147ffdd",
+    "choice_seed": 0,
+    "prompt_type": "zero_shot"
+  },
+  "gpqa-diamond-rec0Arme2jcXQZnAW": {
+    "answer": "C",
+    "record_id": "rec0Arme2jcXQZnAW",
+    "subdomain": "Organic Chemistry",
+    "dataset_revision": "633f5ee89ab8ad4522a9f850766b73f62147ffdd",
+    "choice_seed": 0,
+    "prompt_type": "zero_shot"
+  },
+  "gpqa-diamond-rec0wZvZgiz320KRs": {
+    "answer": "D",
+    "record_id": "rec0wZvZgiz320KRs",
+    "subdomain": "Quantum Mechanics",
+    "dataset_revision": "633f5ee89ab8ad4522a9f850766b73f62147ffdd",
+    "choice_seed": 0,
+    "prompt_type": "zero_shot"
+  },
+  "gpqa-diamond-rec0yTRmO1o1xCA6H": {
+    "answer": "C",
+    "record_id": "rec0yTRmO1o1xCA6H",
+    "subdomain": "Electromagnetism and Photonics",
+    "dataset_revision": "633f5ee89ab8ad4522a9f850766b73f62147ffdd",
+    "choice_seed": 0,
+    "prompt_type": "zero_shot"
+  },
+  "gpqa-diamond-rec1zl5LvaatzGhFt": {
+    "answer": "C",
+    "record_id": "rec1zl5LvaatzGhFt",
+    "subdomain": "Quantum Mechanics",
+    "dataset_revision": "633f5ee89ab8ad4522a9f850766b73f62147ffdd",
+    "choice_seed": 0,
+    "prompt_type": "zero_shot"
+  }
+}

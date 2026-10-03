@@ -1,0 +1,12 @@
+schema_version: 1
+id: full-v1
+attempts_per_item: 1
+selection: complete
+benchmarks:
+  - livebench
+  - hle
+  - gpqa-diamond
+  - mmlu-pro
+  - livecodebench
+status: pending-adapter-validation
+

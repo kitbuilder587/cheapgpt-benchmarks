@@ -1,0 +1,27 @@
+schema_version: 1
+id: quick-v1
+selection: fixed
+seed: 587
+attempts_per_item: 3
+items: 26
+benchmarks:
+  gpqa-diamond:
+    items: 5
+    plan_sha256: 8ee404b7cee8518d43e4f3f76cc739bde56f9b96556a41cd97f6cecefa30a1cb
+    expected_sha256: eedf6d10ed10cd29e2d2ab618fba9d91d142683b31d241ed3ff9a3c50d49c536
+  hle:
+    items: 5
+    plan_sha256: d5b0d40a8ce16b362247785031698993b1859cee9c0c9a549d52794866aa04a7
+    expected_sha256: 4350f39b05ec1f4e999055786cfe9bda0927bad3fd53a32c2e8ea0fa40f41b1a
+  livebench:
+    items: 6
+    plan_sha256: a38e8400edda96fc8429b765bc2b80740f519898590aabb13c703868f319077e
+    expected_sha256: f1a2d2d9821f414aad36aad17f10233100a21dac25d67d928f47f6fee27ed584
+  livecodebench:
+    items: 5
+    plan_sha256: 3f0dcf5658a5b871dc09fd8f5c74de1251414a09351489caa1b6be49e60c0e7b
+    expected_sha256: edd44cd9ce315ae3ac851c04b4dfdaa3654e8e5c9dd9ba13ddae8525bfb6e0e9
+  mmlu-pro:
+    items: 5
+    plan_sha256: 84d38ec7f813dd1cf84974b8effe1fc6a382b9c6295b3f9d01ccfc525553c1a0
+    expected_sha256: d372e468ee40ab98ae3184addc52390949994c4b72da32d57cdcc6f0b1a0f980

@@ -1,0 +1,27 @@
+{
+  "mmlu-pro-1039": {
+    "answer": "B",
+    "category": "law",
+    "question_id": 1039
+  },
+  "mmlu-pro-10567": {
+    "answer": "B",
+    "category": "computer science",
+    "question_id": 10567
+  },
+  "mmlu-pro-286": {
+    "answer": "B",
+    "category": "business",
+    "question_id": 286
+  },
+  "mmlu-pro-8554": {
+    "answer": "G",
+    "category": "math",
+    "question_id": 8554
+  },
+  "mmlu-pro-9940": {
+    "answer": "D",
+    "category": "physics",
+    "question_id": 9940
+  }
+}

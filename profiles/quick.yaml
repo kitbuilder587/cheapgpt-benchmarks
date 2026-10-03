@@ -1,0 +1,11 @@
+schema_version: 1
+id: quick-v1
+attempts_per_item: 3
+selection: fixed
+benchmarks:
+  - livebench
+  - hle
+  - gpqa-diamond
+  - mmlu-pro
+  - livecodebench
+status: ready

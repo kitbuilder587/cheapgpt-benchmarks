@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kitbuilder587.github.io/cheapgpt-benchmarks/schemas/leaderboard-index.schema.json",
+  "title": "CheapGPT benchmark leaderboard",
+  "type": "object",
+  "required": ["schema_version", "updated_at", "providers", "rows"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "updated_at": { "type": ["string", "null"], "format": "date-time" },
+    "providers": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "run_type",
+          "provider",
+          "model",
+          "benchmark",
+          "reasoning_effort",
+          "dataset_release",
+          "scoring_contract",
+          "questions",
+          "attempts",
+          "score",
+          "reference",
+          "artifact_url",
+          "published_at"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "run_type": { "enum": ["official", "community", "partner"] },
+          "provider": { "type": "string", "minLength": 1 },
+          "model": { "type": "string", "minLength": 1 },
+          "benchmark": { "enum": ["livebench", "hle", "gpqa-diamond", "mmlu-pro", "livecodebench"] },
+          "reasoning_effort": { "enum": ["none", "low", "medium", "high", "xhigh", "max"] },
+          "dataset_release": { "type": "string", "minLength": 1 },
+          "scoring_contract": { "type": "string", "minLength": 1 },
+          "questions": { "type": "integer", "minimum": 1 },
+          "attempts": { "type": "integer", "minimum": 1 },
+          "score": {
+            "type": "object",
+            "required": ["value", "unit"],
+            "properties": {
+              "value": { "type": "number" },
+              "unit": { "enum": ["percent", "points"] }
+            },
+            "additionalProperties": false
+          },
+          "reference": {
+            "type": "object",
+            "required": ["source", "value", "url", "snapshot_url", "compatible"],
+            "properties": {
+              "source": { "type": "string", "minLength": 1 },
+              "value": { "type": "number" },
+              "url": { "type": "string", "format": "uri" },
+              "snapshot_url": { "type": "string", "format": "uri" },
+              "compatible": { "const": true }
+            },
+            "additionalProperties": false
+          },
+          "artifact_url": { "type": "string", "format": "uri" },
+          "published_at": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

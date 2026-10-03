@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kitbuilder587.github.io/cheapgpt-benchmarks/schemas/attempt.schema.json",
+  "title": "CheapGPT benchmark transport attempt",
+  "type": "object",
+  "required": [
+    "schema_version", "run_id", "item_id", "benchmark", "attempt", "track",
+    "requested_model", "started_at", "finished_at", "latency_ms", "status",
+    "request", "response", "retryable", "content_sha256"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "run_id": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}\\.[1-9][0-9]*$" },
+    "item_id": { "type": "string", "minLength": 1 },
+    "benchmark": { "type": "string", "minLength": 1 },
+    "attempt": { "type": "integer", "minimum": 1 },
+    "track": { "enum": ["default", "leaderboard"] },
+    "requested_model": { "type": "string", "minLength": 1 },
+    "returned_model": { "type": ["string", "null"] },
+    "request_id": { "type": ["string", "null"] },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "latency_ms": { "type": "integer", "minimum": 0 },
+    "status": { "enum": ["completed", "error"] },
+    "request": {
+      "type": "object",
+      "required": ["endpoint", "headers", "body"],
+      "properties": {
+        "endpoint": { "type": "string" },
+        "headers": { "type": "object" },
+        "body": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "response": { "type": "object" },
+    "usage": { "type": ["object", "null"] },
+    "error": { "type": ["object", "null"] },
+    "retryable": { "type": "boolean" },
+    "content_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "additionalProperties": false
+}
+

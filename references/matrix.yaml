@@ -1,0 +1,247 @@
+schema_version: 1
+retrieved_at: "2026-09-03"
+policy:
+  publish_requires:
+    - same_model
+    - same_reasoning_effort
+    - same_dataset_subset
+    - same_prompt_and_scoring_contract
+    - deterministic_rescoring
+  default_run_decision: hold
+contracts:
+  aa-gpqa-diamond-v4.1.1:
+    benchmark: gpqa-diamond
+    source: Artificial Analysis
+    dataset: GPQA Diamond
+    dataset_size: 198
+    repeats: 5
+    temperature: 0.6
+    scoring: regex extraction, pass@1 aggregated across 990 attempts
+    primary_url: https://artificialanalysis.ai/evaluations/gpqa-diamond
+    methodology_url: https://artificialanalysis.ai/methodology/intelligence-benchmarking
+    snapshot_url: https://springprompt.com/benchmarks/gpqa-diamond
+    snapshot_date: "2026-07-30"
+  aa-hle-text-v4.1.1:
+    benchmark: hle
+    source: Artificial Analysis
+    dataset: Humanity's Last Exam, May 2025 text-only subset
+    dataset_size: 2158
+    repeats: 1
+    temperature: 0.6
+    scoring: GPT-5.6 Luna medium equality checker, pass@1
+    primary_url: https://artificialanalysis.ai/evaluations/humanitys-last-exam
+    methodology_url: https://artificialanalysis.ai/methodology/intelligence-benchmarking
+    snapshot_url: https://springprompt.com/benchmarks/humanitys-last-exam
+    snapshot_date: "2026-07-30"
+models:
+  gpt-5.6-sol:
+    default_effort: low
+    efforts:
+      non-reasoning: {gpqa: 0.789898989898990, hle: 0.166821130676552}
+      low: {gpqa: 0.897979797979798, hle: 0.393883225208526}
+      medium: {gpqa: 0.926262626262626, hle: 0.422150139017609}
+      high: {gpqa: 0.928282828282828, hle: 0.460148285449490}
+      xhigh: {gpqa: 0.931313131313131, hle: 0.473123262279889}
+      max: {gpqa: 0.941414141414141, hle: 0.494902687673772}
+    primary_url_pattern: https://artificialanalysis.ai/models/gpt-5-6-sol-{effort}
+    max_primary_url: https://artificialanalysis.ai/models/gpt-5-6-sol
+  gpt-5.6-terra:
+    default_effort: medium
+    efforts:
+      non-reasoning: {gpqa: 0.746464646464646, hle: 0.113994439295644}
+      low: {gpqa: 0.843434343434343, hle: 0.291936978683967}
+      medium: {gpqa: 0.871717171717172, hle: 0.332715477293791}
+      high: {gpqa: 0.895959595959596, hle: 0.385078776645042}
+      xhigh: {gpqa: 0.908080808080808, hle: 0.418906394810009}
+      max: {gpqa: 0.925252525252525, hle: 0.429101019462465}
+    primary_url_pattern: https://artificialanalysis.ai/models/gpt-5-6-terra-{effort}
+    max_primary_url: https://artificialanalysis.ai/models/gpt-5-6-terra
+  gpt-5.6-luna:
+    default_effort: medium
+    efforts:
+      non-reasoning: {gpqa: 0.645454545454546, hle: 0.072289156626506}
+      low: {gpqa: 0.835353535353535, hle: 0.198331788693234}
+      medium: {gpqa: 0.858585858585859, hle: 0.257645968489342}
+      high: {gpqa: 0.891919191919192, hle: 0.334105653382762}
+      xhigh: {gpqa: 0.894949494949495, hle: 0.369786839666358}
+      max: {gpqa: 0.911111111111111, hle: 0.394810009267841}
+    primary_url_pattern: https://artificialanalysis.ai/models/gpt-5-6-luna-{effort}
+    max_primary_url: https://artificialanalysis.ai/models/gpt-5-6-luna
+  gpt-5.5:
+    default_effort: medium
+    efforts:
+      non-reasoning: {gpqa: 0.767676767676768, hle: 0.137164040778499}
+      low: {gpqa: 0.910101010101010, hle: 0.326691380908248}
+      medium: {gpqa: 0.926262626262626, hle: 0.423540315106580}
+      high: {gpqa: 0.932323232323232, hle: 0.450417052826691}
+      xhigh: {gpqa: 0.935353535353535, hle: 0.457831325301205}
+    primary_url_pattern: https://artificialanalysis.ai/models/gpt-5-5-{effort}
+    max_primary_url: null
+run_gate:
+  - model: gpt-5.6-sol
+    effort: low
+    benchmark: gpqa-diamond
+    contract: aa-gpqa-diamond-v4.1.1
+    decision: run
+    reference_url: https://artificialanalysis.ai/models/gpt-5-6-sol-low
+    snapshot_url: https://springprompt.com/benchmarks/gpqa-diamond
+    reason: Exact model, effort, dataset, repeats, prompt and scoring contract are reproducible.
+  - model: gpt-5.6-sol
+    effort: low
+    benchmark: hle
+    contract: aa-hle-text-v4.1.1
+    decision: hold
+    reference_url: https://artificialanalysis.ai/models/gpt-5-6-sol-low
+    snapshot_url: https://springprompt.com/benchmarks/humanitys-last-exam
+    reason: Reference exists, but the pinned Luna-medium equality-judge adapter is not released.
+  - model: gpt-5.6-sol
+    effort: low
+    benchmark: livebench
+    contract: null
+    decision: hold
+    reference_url: https://livebench.ai/
+    snapshot_url: https://livebench.ai/table_2026_06_25.csv
+    reason: Public row is max effort and a newer seven-category release, not low effort.
+  - model: gpt-5.6-sol
+    effort: low
+    benchmark: mmlu-pro
+    contract: null
+    decision: hold
+    reference_url: https://github.com/TIGER-AI-Lab/MMLU-Pro
+    snapshot_url: null
+    reason: No trusted public result with this exact model, effort and official prompt was found.
+  - model: gpt-5.6-sol
+    effort: low
+    benchmark: livecodebench
+    contract: null
+    decision: hold
+    reference_url: https://livecodebench.github.io/
+    snapshot_url: null
+    reason: No trusted public result with this exact model, effort and dataset release was found.
+  - model: gpt-5.6-terra
+    effort: medium
+    benchmark: gpqa-diamond
+    contract: aa-gpqa-diamond-v4.1.1
+    decision: run
+    reference_url: https://artificialanalysis.ai/models/gpt-5-6-terra-medium
+    snapshot_url: https://springprompt.com/benchmarks/gpqa-diamond
+    reason: Exact model, effort, dataset, repeats, prompt and scoring contract are reproducible.
+  - model: gpt-5.6-terra
+    effort: medium
+    benchmark: hle
+    contract: aa-hle-text-v4.1.1
+    decision: hold
+    reference_url: https://artificialanalysis.ai/models/gpt-5-6-terra-medium
+    snapshot_url: https://springprompt.com/benchmarks/humanitys-last-exam
+    reason: Reference exists, but the pinned Luna-medium equality-judge adapter is not released.
+  - model: gpt-5.6-terra
+    effort: medium
+    benchmark: livebench
+    contract: null
+    decision: hold
+    reference_url: https://livebench.ai/
+    snapshot_url: https://livebench.ai/table_2026_06_25.csv
+    reason: Public row is max effort, not medium, and no exact historical snapshot is available.
+  - model: gpt-5.6-terra
+    effort: medium
+    benchmark: mmlu-pro
+    contract: null
+    decision: hold
+    reference_url: https://github.com/TIGER-AI-Lab/MMLU-Pro
+    snapshot_url: null
+    reason: No trusted public result with this exact model, effort and official prompt was found.
+  - model: gpt-5.6-terra
+    effort: medium
+    benchmark: livecodebench
+    contract: null
+    decision: hold
+    reference_url: https://livecodebench.github.io/
+    snapshot_url: null
+    reason: No trusted public result with this exact model, effort and dataset release was found.
+  - model: gpt-5.6-luna
+    effort: medium
+    benchmark: gpqa-diamond
+    contract: aa-gpqa-diamond-v4.1.1
+    decision: run
+    reference_url: https://artificialanalysis.ai/models/gpt-5-6-luna-medium
+    snapshot_url: https://springprompt.com/benchmarks/gpqa-diamond
+    reason: Exact model, effort, dataset, repeats, prompt and scoring contract are reproducible.
+  - model: gpt-5.6-luna
+    effort: medium
+    benchmark: hle
+    contract: aa-hle-text-v4.1.1
+    decision: hold
+    reference_url: https://artificialanalysis.ai/models/gpt-5-6-luna-medium
+    snapshot_url: https://springprompt.com/benchmarks/humanitys-last-exam
+    reason: Reference exists, but the pinned Luna-medium equality-judge adapter is not released.
+  - model: gpt-5.6-luna
+    effort: medium
+    benchmark: livebench
+    contract: null
+    decision: hold
+    reference_url: https://livebench.ai/
+    snapshot_url: https://livebench.ai/table_2026_06_25.csv
+    reason: Public row is max effort, not medium, and no exact historical snapshot is available.
+  - model: gpt-5.6-luna
+    effort: medium
+    benchmark: mmlu-pro
+    contract: null
+    decision: hold
+    reference_url: https://github.com/TIGER-AI-Lab/MMLU-Pro
+    snapshot_url: null
+    reason: No trusted public result with this exact model, effort and official prompt was found.
+  - model: gpt-5.6-luna
+    effort: medium
+    benchmark: livecodebench
+    contract: null
+    decision: hold
+    reference_url: https://livecodebench.github.io/
+    snapshot_url: null
+    reason: No trusted public result with this exact model, effort and dataset release was found.
+  - model: gpt-5.5
+    effort: medium
+    benchmark: gpqa-diamond
+    contract: aa-gpqa-diamond-v4.1.1
+    decision: run
+    reference_url: https://artificialanalysis.ai/models/gpt-5-5-medium
+    snapshot_url: https://springprompt.com/benchmarks/gpqa-diamond
+    reason: Exact model, effort, dataset, repeats, prompt and scoring contract are reproducible.
+  - model: gpt-5.5
+    effort: medium
+    benchmark: hle
+    contract: aa-hle-text-v4.1.1
+    decision: hold
+    reference_url: https://artificialanalysis.ai/models/gpt-5-5-medium
+    snapshot_url: https://springprompt.com/benchmarks/humanitys-last-exam
+    reason: Reference exists, but the pinned Luna-medium equality-judge adapter is not released.
+  - model: gpt-5.5
+    effort: medium
+    benchmark: livebench
+    contract: null
+    decision: hold
+    reference_url: https://livebench.ai/
+    snapshot_url: https://livebench.ai/table_2026_06_25.csv
+    reason: Public row is xhigh effort, not medium, and no exact historical snapshot is available.
+  - model: gpt-5.5
+    effort: medium
+    benchmark: mmlu-pro
+    contract: null
+    decision: hold
+    reference_url: https://github.com/TIGER-AI-Lab/MMLU-Pro
+    snapshot_url: null
+    reason: No trusted public result with this exact model, effort and official prompt was found.
+  - model: gpt-5.5
+    effort: medium
+    benchmark: livecodebench
+    contract: null
+    decision: hold
+    reference_url: https://livecodebench.github.io/
+    snapshot_url: null
+    reason: No trusted public result with this exact model, effort and dataset release was found.
+excluded_candidates:
+  - run: full-v1/gpt-5.6-sol/gpqa-diamond
+    reason: One repeat, different prompt, and implicit temperature do not match the reference contract.
+  - run: full-v1/gpt-5.6-sol/hle
+    reason: The grader differs from the current Artificial Analysis GPT-5.6 Luna medium equality checker.
+  - run: full-v1/gpt-5.6-sol/livebench
+    reason: Dataset release, categories, and reasoning effort differ from the public reference.

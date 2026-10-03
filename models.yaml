@@ -1,0 +1,14 @@
+schema_version: 1
+models:
+  - id: gpt-5.5
+    cohort: flagship
+    default_effort: medium
+  - id: gpt-5.6-sol
+    cohort: flagship
+    default_effort: low
+  - id: gpt-5.6-terra
+    cohort: balanced
+    default_effort: medium
+  - id: gpt-5.6-luna
+    cohort: control
+    default_effort: medium
