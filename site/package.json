@@ -8,11 +8,11 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "astro": "^7.2.10",
+    "@astrojs/check": "^0.9.11",
+    "astro": "^7.4.1",
     "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "@types/node": "^22.20.1"
+    "@types/node": "^22.20.5"
   }
 }
